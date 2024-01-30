@@ -34,15 +34,13 @@ public class ContatoService {
                 Long numero = MenuService.entrada.nextLong();
                 MenuService.entrada.nextLine();
                 Telefone novoTelefone = new Telefone();
-                if ((((Math.floor(Math.log10(numero+1)))) == 8)
-                        || (((Math.floor(Math.log10(numero+1)))) == 9)) {
+                if ((((Math.floor(Math.log10(numero + 1)))) == 9)) {
                     novoTelefone.setDdd(ddd);
                     novoTelefone.setNumero(numero);
                     novoContato.getTelefones().add(novoTelefone);
                     salvar = false;
                     break;
-                }
-                else{
+                } else {
                     System.out.println("Número Inválido. Insira novamente!");
                 }
             } else {
@@ -132,17 +130,21 @@ public class ContatoService {
                     System.out.println("Informe o novo número:");
                     long novoNumero = entrada.nextLong();
                     entrada.nextLine();
-                    telefoneEscolhido.setDdd(novoDDD);
-                    telefoneEscolhido.setNumero(novoNumero);
-//                    dados.atualizar(telefoneEscolhido);
-                    System.out.println("Telefone Editado!");
+                    if ((((Math.floor(Math.log10(novoNumero + 1)))) == 9)) {
+                        telefoneEscolhido.setDdd(novoDDD);
+                        telefoneEscolhido.setNumero(novoNumero);
+                        contato.getTelefones().set(indice - 1, telefoneEscolhido);
+                        dados.atualizar(contato);
+                        System.out.println("Telefone Editado!");
+                    } else {
+                        System.out.println("Número Inválido. tente novamente!");
+                    }
                 } else {
-                    System.out.println("DDD Inválido, insira novamente!");
+                    System.out.println("DDD Inválido, tente novamente!");
                 }
-            } else if ( e == 2) {
-                telefones.remove(telefoneEscolhido);
+            } else if (e == 2) {
+
                 System.out.println("Telefone Excluido!");
-//                dados.remover();
             }
         } else {
             System.out.println("Opção inválida.");

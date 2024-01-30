@@ -1,5 +1,7 @@
 package br.com.ada.tech.service;
 
+import br.com.ada.tech.helper.ContatoHelper;
+import br.com.ada.tech.model.Contato;
 import br.com.ada.tech.repository.ContatoRepository;
 
 import java.util.Scanner;
@@ -53,6 +55,7 @@ public class MenuService {
                 """);
         System.out.println(">>>> Contatos <<<<");
         System.out.println("ID  |  Nome \n");
+
 
         ContatoService.todosContatos();
 

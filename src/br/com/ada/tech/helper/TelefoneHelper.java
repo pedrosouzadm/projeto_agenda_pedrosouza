@@ -73,5 +73,4 @@ public class TelefoneHelper {
         }).collect(Collectors.toList());
         this.arquivoUtil.escreveArquivo(PATH_TELEFONE, linhasTelefonesAtualizados);
     }
-
 }
