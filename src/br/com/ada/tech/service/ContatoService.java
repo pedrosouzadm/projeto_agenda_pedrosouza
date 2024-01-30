@@ -134,7 +134,7 @@ public class ContatoService {
                     entrada.nextLine();
                     telefoneEscolhido.setDdd(novoDDD);
                     telefoneEscolhido.setNumero(novoNumero);
-                    dados.atualizar(telefoneEscolhido);
+//                    dados.atualizar(telefoneEscolhido);
                     System.out.println("Telefone Editado!");
                 } else {
                     System.out.println("DDD Inválido, insira novamente!");
@@ -142,7 +142,7 @@ public class ContatoService {
             } else if ( e == 2) {
                 telefones.remove(telefoneEscolhido);
                 System.out.println("Telefone Excluido!");
-                dados.remover();
+//                dados.remover();
             }
         } else {
             System.out.println("Opção inválida.");
